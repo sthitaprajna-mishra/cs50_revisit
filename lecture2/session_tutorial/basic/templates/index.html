@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Site</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+		}
+	</style>
+	{% if session["mode"] == "dark" %}
+	<style type="text/css">
+		body{
+			background-color: black;
+			color: white;
+		}
+	</style>
+	{% endif %}
+</head>
+<body>
+	<h1>My Site</h1>
+	<a href = "{{ url_for('set_background', mode = 'light') }}">Light Mode</a>
+	<a href = "{{ url_for('set_background', mode = 'dark') }}">Dark Mode</a>
+</body>
